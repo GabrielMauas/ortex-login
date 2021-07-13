@@ -7,12 +7,12 @@ export default function CreateAccount() {
 
     return (
         <div className='login__forms'>
-            <form action="" className="login__create" id="login-up">
+            <form action="" className="login__register" id="login-up">
                 <h1 className="login__title">Create Account</h1>
 
                 <div className="login__box">
                     <box-icon name='user' type='solid' color="#666" className='login__icon'></box-icon>
-                    <input type="text" placeholder="Username" className="login__input" />
+                    <input type="text" placeholder="Full Name" className="login__input" />
                 </div>
 
                 <div className="login__box">
@@ -25,18 +25,13 @@ export default function CreateAccount() {
                     <input type="password" placeholder="Password" className="login__input" />
                 </div>
 
-                <a href="#" className="login__button">Sign Up</a>
+                <a href="#" className="login__button">Create</a>
 
                 <div>
                     <span className="login__account">Already have an Account? </span>
                     <Link to="/" className="login__signup" id="sign-in">Sign In</Link>
                 </div>
 
-                <div className="login__social">
-                    <a href="#" className="login__social-icon"><box-icon type='logo' name='facebook' color="#f2f2f2"></box-icon></a>
-                    <a href="#" className="login__social-icon"><box-icon type='logo' name='twitter' color="#f2f2f2"></box-icon></a>
-                    <a href="#" className="login__social-icon"><box-icon type='logo' name='google' color="#f2f2f2"></box-icon></a>
-                </div>
             </form>
         </div>
     )

@@ -7,7 +7,7 @@ export default function Login() {
 
     return (
         <div className='login__forms'>
-            <form action="/login" method="post" className='login__registre' id="login-in">
+            <form action="/login" method="post" className='login__register' id="login-in">
                 <h1 className="login__title">Log In</h1>
 
                 <div className="login__box">
@@ -20,7 +20,7 @@ export default function Login() {
                     <input type="password" placeholder="Password" className="login__input"/>
                 </div>
 
-                <Link to={ResetPwd} href="#" className="login__forgot">Forgot password?</Link>
+                <Link to="/resetpassword" href="#" className="login__forgot">Forgot password?</Link>
 
                 <button type="submit" href="#" className="login__button">Log In</button>
 
