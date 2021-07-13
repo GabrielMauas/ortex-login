@@ -208,7 +208,16 @@ img{
         margin-bottom: 2rem;
         text-align: left;
     }
-
+    &__madeby{
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        color: #666;
+        margin: 0;
+        & span{
+            color: $first-color;
+        }
+    }
 }
 
 /* ===== MEDIA QUERIES =====*/
