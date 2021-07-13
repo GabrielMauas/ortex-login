@@ -1,27 +1,34 @@
-import React,{ useState } from 'react'
-import axios from 'axios';
+import React,{ useState, useEffect } from 'react'
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+
 
 export default function LiveFeed() {
 
     const [rate, setRate] = useState('');
+    // const [time, setTime] = useState();
+    // console.log(date);
+    const client = new W3CWebSocket('ws://stream.tradingeconomics.com/?client=guest:guest');
+    client.onopen = () => {
+        // console.log('WebSocket connected');  
+        client.send('{"topic": "subscribe", "to": "EURUSD:CUR"}');      
 
-    const URL = 'http://api.exchangeratesapi.io/v1/latest';
-    const API_KEY = '05e7ed28b049cbd512ff5252c2413d1b';
-    const currency = 'USD';
-        
-    const getData = () => {
-        axios.get(URL+`?access_key=${API_KEY}&base=EUR&symbols=${currency}`)
-        .then(res => {
-            console.log(res.data.rates);
-            setRate(res.data.rates.USD);
-        })
-        .catch(err => console.log(err));
     }
+    useEffect(() => {
+        client.onmessage = message => {
+            const price = JSON.parse(message.data);
+
+            setRate(price.price);
+
+        }
+    })
+
+
     
     return (
-        <div className='login__feed'>
-            <span>EUR/USD: ${rate}</span>
-            <span className="login__feed-button"><box-icon name='refresh' color="#f2f2f2" onClick={getData} ></box-icon></span>    
+        <div className='login__feed' >
+            {/* <span>{time}</span> */}
+            <span>EUR/USD: {rate ? `$${rate}` : 'Loading...'}</span>
+            {/* <span className="login__feed-button"><box-icon name='refresh' color="#f2f2f2" ></box-icon></span>     */}
         </div>
     )
 }
