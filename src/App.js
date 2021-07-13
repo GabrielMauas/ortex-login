@@ -5,7 +5,8 @@ import 'boxicons';
 
 import Login from './Components/Login';
 import CreateAccount from './Components/CreateAccount';
-import LiveFeed from './Components/LiveFeed';
+import ResetPwd from './Components/ResetPwd';
+import Navbar from './Components/Navbar';
 
 
 export default function App() {
@@ -13,16 +14,11 @@ export default function App() {
 
     return (
         <div className="login">
-            <div className="login__content">
-                <div className="login__img">
-                  <img src="https://ortex-static-files.s3.amazonaws.com/static/public/images/ortex_logo_v-white.svg" alt="Logo" />
-                  <LiveFeed />
-                </div>
-
-            </div>
+            <Navbar />
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route path="/signup" component={CreateAccount} />
+                <Route path="/resetpassword" component={ResetPwd} />
             </Switch>
         </div>
     )
