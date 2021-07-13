@@ -209,13 +209,19 @@ img{
         text-align: left;
     }
     &__madeby{
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
+        position: absolute;
+        bottom: 5rem;
+        left: 2.5rem;
         color: #666;
         margin: 0;
         & span{
             color: $first-color;
+        }
+        & a{
+            color: #17bfc2;
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -250,5 +256,10 @@ img{
         &__register{
             top: 5rem;
         }
+        &__madeby{
+           bottom: 0;
+           left: 5rem;
+        }
+
     }
 }

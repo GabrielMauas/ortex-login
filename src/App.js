@@ -20,7 +20,10 @@ export default function App() {
                 <Route path="/signup" component={CreateAccount} />
                 <Route path="/resetpassword" component={ResetPwd} />
             </Switch>
-            <p className='login__madeby'>Technical Task for <span>Ortex</span>. Made by Gabriel Mauas.</p>
+
+            <div className='login__madeby'>
+                <p>Technical Task for <span>Ortex</span>. Made by <a href="https://linktr.ee/gabrielmauas" target="_blank" rel="noreferrer">Gabriel Mauas</a>.</p>
+            </div>
         </div>
     )
 }
