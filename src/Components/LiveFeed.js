@@ -27,8 +27,7 @@ export default function LiveFeed() {
     return (
         <div className='login__feed' >
             {/* <span>{time}</span> */}
-            <span>EUR/USD: {rate ? `$${rate}` : 'Loading...'}</span>
-            {/* <span className="login__feed-button"><box-icon name='refresh' color="#f2f2f2" ></box-icon></span>     */}
+            <span> {rate ? `EUR/USD: $${rate}` : <box-icon name='loader-alt' animation='spin' rotate='270' color="#f2f2f2"></box-icon>}</span>
         </div>
     )
 }
